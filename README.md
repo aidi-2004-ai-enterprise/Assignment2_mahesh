@@ -25,7 +25,7 @@ To get the project running locally, follow these steps:
 ### 2.1 Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/penguin_classification.git # Replace with your actual repo URL
+git clone https://github.com/aidi-2004-ai-enterprise/Assignment2_mahesh.git
 cd penguin_classification
 ```
 
