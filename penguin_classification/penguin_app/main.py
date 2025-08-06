@@ -1,3 +1,4 @@
+# main.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from enum import Enum
@@ -29,7 +30,13 @@ class PenguinFeatures(BaseModel):
 
 # Corrected paths to load model, encoder, and columns
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "..", "app", "data")
+
+# This is the key change. We now check the environment
+# to determine the correct path. This works for both local and Docker.
+if os.path.exists(os.path.join(BASE_DIR, "..", "app", "data")):
+    DATA_DIR = os.path.join(BASE_DIR, "..", "app", "data")
+else:
+    DATA_DIR = os.path.join(BASE_DIR, "..", "data")
 
 MODEL_PATH = os.path.join(DATA_DIR, "model.pkl")
 ENCODER_PATH = os.path.join(DATA_DIR, "label_encoder.pkl")

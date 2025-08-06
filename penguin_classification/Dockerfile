@@ -1,18 +1,23 @@
+# Start with a base Python image
 FROM python:3.10-slim
 
+# Set the working directory inside the container
 WORKDIR /app
 
+# Copy the requirements file and install dependencies
+# This is a common practice for better Docker caching
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the penguin_app folder containing main.py
+# This is the corrected COPY command.
+# It copies the local `app/data` directory to `/app/data` in the container.
+COPY app/data/ ./data/
+
+# Copy your application code
 COPY penguin_app/ ./penguin_app/
 
-# Copy the data folder and its contents.
-# Place it inside the penguin_app directory inside the container.
-COPY app/data/ ./penguin_app/data/
-
+# Expose the port the application will run on
 EXPOSE 8080
 
-# The CMD command is correct now because the application is at /app/penguin_app/main.py
+# The command to start the Uvicorn server
 CMD ["uvicorn", "penguin_app.main:app", "--host", "0.0.0.0", "--port", "8080"]
