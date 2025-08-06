@@ -110,9 +110,9 @@ This section documents the manual process of deploying the container to Cloud Ru
 
 ### 4.3 Test Deployment
 
-Once the service is deployed, a public URL will be provided.
+This is the URL for deployed model: https://penguin-api-408534553654.us-central1.run.app/docs
 
-1.  Access the **`/docs`** endpoint (e.g., `https://penguin-api-408534553654.us-central1.run.app/docs`) to view the interactive API documentation.
+1.  Access the **`/docs`** endpoint to view the interactive API documentation.
 2.  Use the documentation to send a sample request to the `/predict` endpoint and verify that you receive a correct prediction.
 
 ### 4.4 Troubleshooting
@@ -149,6 +149,3 @@ To address the `PydanticDeprecatedSince20` warning, it is recommended to update 
 ## 6\. Summary
 
 This document details the successful process of building a portable, production-ready Docker image for the Penguin API. The image was optimized for size and security, and the full deployment workflow to Google Cloud was documented for future use.
-
-```
-```
