@@ -1,0 +1,7 @@
+pycache*.pyc
+.env sa-key.json
+model.json 
+*.log 
+.pytest_cache 
+htmlcov/ 
+*.egg-info
