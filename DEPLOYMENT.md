@@ -1,9 +1,7 @@
-````markdown
 # Deployment Documentation - Penguin API 🐧
 
 This document outlines the process for building, running, and deploying the Penguin API using Docker.
 
----
 
 ## 1. Docker Build and Run
 
@@ -22,8 +20,6 @@ To run the container locally and map the exposed port, use this command. It make
 ```bash
 docker run -p 8080:8080 penguin-api
 ```
-
------
 
 ## 2\. Docker Image Inspection
 
